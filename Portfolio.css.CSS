@@ -1,0 +1,356 @@
+/* Base Styles */
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.nav-bar {
+    background-color: #000000;
+    grid-area: nav-bar;
+    box-shadow: 1px 2px #606060;
+    color: white;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.pic {
+    padding: 20px;
+    margin-left: 10px;
+    background-color: #14c2c82a;
+    border-radius: 30px;
+}
+
+.Asideimg {
+    position: relative;
+    border-radius: 90%;
+    opacity: 90%;
+    background-color: #f2fe15;
+    border: solid 5px rgba(255, 0, 93, 0.865);
+    width: 100%;
+    height: auto;
+}
+
+.sideTxt {
+    padding: 20px;
+    border-radius: 30px;
+}
+
+.Skills > img {
+    text-align: center;
+    padding-left: 5px;
+    border-radius: 90%;
+}
+
+.Skills {
+    padding: 20px;
+    background-color: #fefe155f;
+    width: 100%;
+    text-align: center;
+    color: #ffffff
+    border: 1px dashed rgb(229, 229, 229);
+    border-radius: 20px;
+}
+
+.nav-item {
+    display: inline;
+    padding-right: 40px;
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
+}
+
+.navbar-nav .nav-item .nav-link {
+    display: inline;
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
+    float: right;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: rgb(80, 11, 231);
+}
+
+.AI_DivContainer {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+.AI_Dev {
+    grid-area: AI_Dev;
+    padding: 10px;
+}
+
+.AiDevside {
+    padding: 190px;
+    border-radius: 30px;
+    background-image: linear-gradient(rgba(255, 199, 209, 0.631), white);
+}
+
+.DevButton {
+    border-radius: 50px;
+    background: #F7931E;
+    color: white;
+    padding: 20px;
+    text-decoration: none;
+}
+
+.DevButton:hover {
+    background: #ba4e26;
+}
+
+.AIServices {
+    grid-area: AIServices;
+    background-color: #fefe1529;
+    text-align: center;
+    border-radius: 30px;
+    padding: 70px;
+}
+
+.gradvid {
+    border-radius: 40px;
+    width: 100%;
+    height: auto;
+}
+
+.AIProvide {
+    grid-area: AIProvide;
+    background-color: #002A59;
+    text-align: center;
+color:white;
+}
+
+.supportImg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    height: auto;
+}
+
+.divSupportTxt {
+    position: relative;
+    text-align: center;
+}
+
+.AIservicesText {
+    padding: 0px 190px;
+    color: #000;
+    text-align: center;
+    font-size: 18px;
+    font-family: Space Grotesk;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.AIProvideText {
+    padding: 30px;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    font-family: Space Grotesk;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.AIServicesFooter {
+    color: #5A5A5A;
+    font-size: 16px;
+    font-family: Space Grotesk;
+    font-style: normal;
+    font-weight: 500;
+}
+
+/* Media Queries for Responsiveness */
+
+@media screen and (max-width: 1200px) {
+    .AI_DivContainer {
+        grid-template-columns: 1fr;
+    }
+    .AI_Dev, .AIProvide, .AIServices {
+        padding: 20px;
+    }
+    .AIservicesText, .AIProvideText {
+        padding: 0 20px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .nav-bar {
+        text-align: center;
+    }
+    .nav-item {
+        display: block;
+        margin-bottom: 10px;
+    }
+    .nav-item:last-child {
+        margin-bottom: 0;
+    }
+    .AI_DivContainer {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nav-bar {
+        padding: 5px;
+    }
+    .DevButton {
+        padding: 10px;
+    }
+    .AIservicesText, .AIProvideText {
+        font-size: 16px;
+    }
+    .pic {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .nav-item {
+        padding-right: 20px;
+    }
+    .AI_DivContainer {
+        grid-template-columns: 1fr;
+    }
+    .AI_Dev, .AIProvide, .AIServices {
+        padding: 10px;
+    }
+    .AIservicesText, .AIProvideText {
+        padding: 0 10px;
+        font-size: 14px;
+    }
+}
+span::before {
+    content: "JUNIOR SOFTWARE ENGINEER";
+    animation: animate infinite 8s;
+    color:blue;
+    padding-left: 10px; 
+}
+  
+
+@keyframes animate 
+{
+    50% {
+        content: "FRONTEND WEB DEVELOPER";
+        color: #FA003F;
+    }
+
+
+.AIProvideText {
+    padding: 30px;
+    color: white; 
+    text-align: center;
+    font-size: 18px;
+    font-family: Space Grotesk;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.AIProvideFooter {
+    color: white;
+    font-size: 16px;
+    font-family: Space Grotesk;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.experience-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Space between the two sections */
+}
+
+/* Individual sections */
+.AIExperience, .developerExperience {
+  flex: 1; /* Allow sections to grow equally */
+  min-width: 300px; /* Minimum width of each section */
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.contact-section {
+    background: linear-gradient(135deg, #e2e2e2 0%, #ffffff 100%);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.contact-header h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.contact-header p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+.contact-content {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.contact-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    flex: 1;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.contact-icon {
+    font-size: 2.5em;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.contact-info h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+.contact-info a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .contact-content {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
