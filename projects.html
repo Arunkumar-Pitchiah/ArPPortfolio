@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Arunkumar P</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ── Project Card Base ── */
+        .project-card {
+            position: relative;
+            padding: 1.6rem;
+            border-radius: 16px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.07);
+            height: 100%;
+            transition: background 0.3s, transform 0.3s, border-color 0.3s;
+            overflow: hidden;
+        }
+        .project-card:hover {
+            background: rgba(255,255,255,0.055);
+            transform: translateY(-4px);
+            border-color: rgba(255,255,255,0.13);
+        }
+
+        /* Glow accent line at top of each card */
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            border-radius: 16px 16px 0 0;
+            opacity: 0.7;
+        }
+        .accent-blue::before   { background: linear-gradient(90deg, #38bdf8, transparent); }
+        .accent-purple::before { background: linear-gradient(90deg, #a78bfa, transparent); }
+        .accent-green::before  { background: linear-gradient(90deg, #34d399, transparent); }
+        .accent-orange::before { background: linear-gradient(90deg, #fb923c, transparent); }
+
+        /* ── Card Header ── */
+        .project-number {
+            font-size: 0.68rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            opacity: 0.4;
+        }
+        .project-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+        }
+        .project-card.featured .project-title {
+            font-size: 1.2rem;
+        }
+
+        /* ── Tags ── */
+        .tag-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35rem;
+            margin-bottom: 1rem;
+        }
+        .tech-tag {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 0.28rem 0.7rem;
+            border-radius: 20px;
+        }
+        .tag-blue   { background: rgba(56,189,248,0.12);  color: #38bdf8;  border: 1px solid rgba(56,189,248,0.22); }
+        .tag-purple { background: rgba(167,139,250,0.12); color: #a78bfa;  border: 1px solid rgba(167,139,250,0.22); }
+        .tag-green  { background: rgba(52,211,153,0.12);  color: #34d399;  border: 1px solid rgba(52,211,153,0.22); }
+        .tag-orange { background: rgba(251,146,60,0.12);  color: #fb923c;  border: 1px solid rgba(251,146,60,0.22); }
+
+        /* ── Body Text ── */
+        .project-desc {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.7;
+            margin-bottom: 0.75rem;
+        }
+        .project-card ul {
+            font-size: 0.83rem;
+            color: rgba(255,255,255,0.45);
+            line-height: 1.8;
+            padding-left: 1.1rem;
+            margin: 0;
+        }
+        .project-card ul li {
+            margin-bottom: 0.3rem;
+        }
+        .project-card ul li strong {
+            color: rgba(255,255,255,0.7);
+            font-weight: 600;
+        }
+
+        /* ── Divider inside featured card ── */
+        .feature-divider {
+            border: none;
+            border-top: 1px solid rgba(255,255,255,0.07);
+            margin: 1rem 0;
+        }
+
+        /* ── Page header ── */
+        .page-subtitle {
+            font-size: 0.88rem;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body class="pt-5">
+    <nav class="navbar navbar-expand-lg fixed-top nav-glass">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-white" href="index.html">Arunkumar Pitchiah<span class="text-gradient">.</span></a>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav gap-3">
+                    <li><a class="nav-link" href="index.html">Overview</a></li>
+                    <li><a class="nav-link active" href="projects.html">Projects</a></li>
+                    <li><a class="nav-link" href="experience.html">Experience</a></li>
+                    <li><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-4 mb-5">
+        <a href="index.html" class="btn-back mb-3 mt-3"><i class="fas fa-arrow-left"></i> Back</a>
+
+        <h2 class="display-5 fw-bold mb-1 animate-fade-in">Technical <span class="text-gradient">Projects.</span></h2>
+        <p class="page-subtitle animate-fade-in delay-1">Enterprise applications, UI optimizations, and automation flows.</p>
+
+        <div class="row g-3">
+
+            <!-- ── FEATURED: Time Tracking System ── -->
+            <div class="col-lg-12 animate-slide-up delay-1">
+                <div class="project-card featured accent-blue">
+                    <p class="project-number"></p>
+                    <div class="d-flex justify-content-between flex-wrap align-items-start gap-2 mb-2">
+                        <h4 class="project-title mb-0">Time Tracking System</h4>
+                        <div class="tag-row mb-0">
+                            <span class="tech-tag tag-blue">Power Apps</span>
+                            <span class="tech-tag tag-purple">SharePoint</span>
+                            <span class="tech-tag tag-blue">Power Automate</span>
+                        </div>
+                    </div>
+                    <hr class="feature-divider">
+                    <p class="project-desc">Designed and developed a role-based Time Tracking system using Power Apps, Power Automate, and SharePoint. Built Employee, Approver, and Power User dashboards with role-based access via security groups.</p>
+                    <ul>
+                        <li>Implemented dynamic week-based period selection.</li>
+                        <li>Built project allocation logic with % Time validation and auto-balance adjustment.</li>
+                        <li>Developed indexed delegation tracking and collection-based performance optimization.</li>
+                        <li>Integrated scheduled reminder flows.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ── MRB Application Upgrade ── -->
+            <div class="col-lg-6 animate-slide-up delay-2">
+                <div class="project-card accent-orange">
+                    <p class="project-number"></p>
+                    <div class="tag-row">
+                        <span class="tech-tag tag-orange">Logic Redesign</span>
+                    </div>
+                    <h5 class="project-title">MRB Application Upgrade</h5>
+                    <p class="project-desc">Performed end-to-end KT and delivered reverse KT with presentation.</p>
+                    <ul>
+                        <li>Redesigned NCM ID generation logic, fixed attachment loading issues, corrected log indicator and revert logic.</li>
+                        <li>Applied fixes across Incoming, In-Process, Intercompany, and Final Inspection modules with workflow alignment.</li>
+                        <li>Created automated notification flow for work completion based on SharePoint groups.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ── LPA Project ── -->
+            <div class="col-lg-6 animate-slide-up delay-2">
+                <div class="project-card accent-green">
+                    <p class="project-number"></p>
+                    <div class="tag-row">
+                        <span class="tech-tag tag-green">SQL Server</span>
+                        <span class="tech-tag tag-blue">Power Automate</span>
+                    </div>
+                    <h5 class="project-title">LPA Project & Data Integration</h5>
+                    <ul>
+                        <li><strong>Data Integration:</strong> Full and scheduled SQL Server to SharePoint synchronization using Power Automate. Managed bulk data flows with error handling across seven SharePoint lists.</li>
+                        <li><strong>LPA Project:</strong> Designed multiple notification flows handling different trigger conditions, recipient routing, and approval-stage email notifications for client-specific escalation requirements.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ── Client Applications ── -->
+            <div class="col-lg-6 animate-slide-up delay-3">
+                <div class="project-card accent-purple">
+                    <p class="project-number"></p>
+                    <div class="tag-row">
+                        <span class="tech-tag tag-purple">Client Solutions</span>
+                    </div>
+                    <h5 class="project-title">Client Applications (Healthcare & Industrial)</h5>
+                    <ul>
+                        <li><strong>Healthcare Client:</strong> Helpdesk Application with ticket management, comment tracking, and automated email notifications across workflow stages.</li>
+                        <li><strong>Access Management:</strong> Access Card Request Application with multi-location approval routing and automated workflow notifications.</li>
+                        <li><strong>Industrial Client:</strong> Helpdesk Application with mail-based ticket creation, deep-link navigation, and automation flows.</li>
+                        <li><strong>Manufacturing Client:</strong> Supported CAPA Application with end-to-end KT and user manual documentation.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ── Web UI Optimization ── -->
+            <div class="col-lg-6 animate-slide-up delay-3">
+                <div class="project-card accent-orange">
+                    <p class="project-number"></p>
+                    <div class="tag-row">
+                        <span class="tech-tag tag-orange">Frontend</span>
+                        <span class="tech-tag tag-orange">UI/UX</span>
+                    </div>
+                    <h5 class="project-title">Web Application UI Optimization</h5>
+                    <p class="project-desc">Collaborated with senior developers to troubleshoot frontend issues and enhance user experience across various platforms.</p>
+                    <ul>
+                        <li><strong>Medical Clinic App:</strong> Resolved frontend UI issues and improved layout structure and responsiveness.</li>
+                        <li><strong>E-commerce Platform:</strong> Fixed UI issues to improve the product repair tracking interface.</li>
+                        <li><strong>Employee Attendance System:</strong> Fixed UI bugs and improved general usability.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ── Internal Projects & Emerging Tech ── -->
+            <div class="col-lg-12 animate-slide-up delay-3">
+                <div class="project-card accent-green">
+                    <p class="project-number"></p>
+                    <div class="tag-row">
+                        <span class="tech-tag tag-green">AI R&D</span>
+                        <span class="tech-tag tag-orange">PowerShell</span>
+                    </div>
+                    <h5 class="project-title">Internal Projects & Emerging Tech</h5>
+                    <hr class="feature-divider">
+                    <ul>
+                        <li>Developed and upgraded internal Helpdesk and Leave Management System (LMS) with improved UI/UX, and supported the Marketing Hub internal project.</li>
+                        <li>Delivered training sessions covering SharePoint, Power Automate, web parts, and Microsoft Forms.</li>
+                        <li>Developed <strong>PowerShell scripts</strong> to automate sprint creation in Azure DevOps Boards and recover deleted flows from Power Automate.</li>
+                        <li>Conducted R&D on <strong>AI-assisted Power Pages</strong> development using PAC CLI, VS Code, and GitHub Copilot to enhance development efficiency.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </main>
+<footer>
+    <div class="container text-center py-4">
+        <p class="mb-0" style="color: rgba(255,255,255,0.35); font-size: 0.82rem;">
+            &copy; Designed & Built by Arunkumar Pitchiah.
+        </p>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
