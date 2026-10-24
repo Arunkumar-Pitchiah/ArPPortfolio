@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Arunkumar Pitchiah — Software Engineer and Power Platform Developer based in Chennai. Open to new opportunities.">
     <title>Contact | Arunkumar P</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -163,6 +164,9 @@
     <nav class="navbar navbar-expand-lg fixed-top nav-glass">
         <div class="container">
             <a class="navbar-brand fw-bold text-white" href="index.html">Arunkumar Pitchiah<span class="text-gradient">.</span></a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars text-white"></i>
+            </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav gap-3">
                     <li><a class="nav-link" href="index.html">Overview</a></li>
@@ -225,7 +229,7 @@
                             <div class="info-icon orange"><i class="fab fa-linkedin"></i></div>
                             <div>
                                 <p class="info-label mb-1">Network</p>
-                                <a href="https://linkedin.com/in/arunkumar-pitchiah" target="_blank" class="info-value">LinkedIn Profile ↗</a>
+                                <a href="https://linkedin.com/in/arunkumar-pitchiah" target="_blank" rel="noopener" class="info-value">LinkedIn Profile ↗</a>
                             </div>
                         </div>
                     </div>
@@ -300,17 +304,22 @@
             btn.disabled       = true;
             errorMsg.style.display = 'none';
 
-            const res = await fetch('https://formspree.io/f/mvzlwnev', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                body: JSON.stringify({
-                    name:    document.getElementById('name').value,
-                    email:   document.getElementById('email').value,
-                    message: document.getElementById('message').value
-                })
-            });
+            let res = null;
+            try {
+                res = await fetch('https://formspree.io/f/mvzlwnev', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify({
+                        name:    document.getElementById('name').value,
+                        email:   document.getElementById('email').value,
+                        message: document.getElementById('message').value
+                    })
+                });
+            } catch (err) {
+                res = null;
+            }
 
-            if (res.ok) {
+            if (res && res.ok) {
                 this.style.display       = 'none';
                 successMsg.style.display = 'block';
             } else {
