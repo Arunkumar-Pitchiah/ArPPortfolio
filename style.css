@@ -162,6 +162,9 @@ button:focus-visible {
     margin: 3px;
     border: 1px solid rgba(255,255,255,0.1);
 }
+:root { --accent-yellow: #fbbf24; }
+
+.tag-yellow { background: rgba(251, 191, 36, 0.1); color: #fbbf24; border-color: rgba(251, 191, 36, 0.25); }
 .tag-blue { background: rgba(0, 97, 255, 0.1); color: #60efff; border-color: rgba(96, 239, 255, 0.2); }
 .tag-purple { background: rgba(139, 92, 246, 0.1); color: #c4b5fd; border-color: rgba(139, 92, 246, 0.2); }
 .tag-green { background: rgba(16, 185, 129, 0.1); color: #6ee7b7; border-color: rgba(16, 185, 129, 0.2); }
